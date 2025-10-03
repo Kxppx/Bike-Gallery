@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  font-family: sans-serif;
+}
+
+.cover::before,
+.cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.cover::before {
+  background: radial-gradient(circle, red 0%, transparent 70%);
+  animation: sweepRed 1.5s linear infinite;
+}
+
+.cover::after {
+  background: radial-gradient(circle, blue 0%, transparent 70%);
+  animation: sweepBlue 2s linear infinite;
+  animation-delay: 1s;
+}
+
+@keyframes sweepRed {
+  0% {
+    transform: translateX(-100%) rotate(10deg);
+  }
+  100% {
+    transform: translateX(100%) rotate(10deg);
+  }
+}
+
+@keyframes sweepBlue {
+  0% {
+    transform: translateX(-100%) rotate(-10deg);
+  }
+  100% {
+    transform: translateX(100%) rotate(-10deg);
+  }
+}
